@@ -1,0 +1,4 @@
+version=4
+
+opts=pgpsigurlmangle=s/$/.sig/ \
+https://mkvtoolnix.download/sources/mkvtoolnix-(.*)@ARCHIVE_EXT@

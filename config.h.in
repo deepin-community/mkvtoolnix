@@ -1,0 +1,168 @@
+/* config.h.in.  Generated from configure.ac by autoheader.  */
+
+/* Define to 1 if 'TIOCGWINSZ' requires <sys/ioctl.h>. */
+#undef GWINSZ_IN_SYS_IOCTL
+
+/* Define to 1 if you have the <benchmark/benchmark.h> header file. */
+#undef HAVE_BENCHMARK_BENCHMARK_H
+
+/* define if the Boost library is available */
+#undef HAVE_BOOST
+
+/* define if the Boost::Filesystem library is available */
+#undef HAVE_BOOST_FILESYSTEM
+
+/* Define to 1 if you have the <boost/operators.hpp> header file. */
+#undef HAVE_BOOST_OPERATORS_HPP
+
+/* define if the Boost::System library is available */
+#undef HAVE_BOOST_SYSTEM
+
+/* define if building with cmark */
+#undef HAVE_CMARK
+
+/* define if building with dvdread */
+#undef HAVE_DVDREAD
+
+/* Define if FLAC__stream_decoder_skip_single_frame exists */
+#undef HAVE_FLAC_DECODER_SKIP
+
+/* Define if the FLAC headers are present */
+#undef HAVE_FLAC_FORMAT_H
+
+/* Define to 1 if you have the 'gettext' function. */
+#undef HAVE_GETTEXT
+
+/* Define to 1 if you have the <iconv.h> header file. */
+#undef HAVE_ICONV_H
+
+/* Define to 1 if you have the <inttypes.h> header file. */
+#undef HAVE_INTTYPES_H
+
+/* Define to 1 if you have the <libintl.h> header file. */
+#undef HAVE_LIBINTL_H
+
+/* locale_charset is available */
+#undef HAVE_LOCALE_CHARSET
+
+/* Define if nlohmann's json-cpp is available. */
+#undef HAVE_NLOHMANN_JSONCPP
+
+/* nl_langinfo is available */
+#undef HAVE_NL_LANGINFO
+
+/* int64_t does not exist */
+#undef HAVE_NO_INT64_T
+
+/* uint64_t does not exist */
+#undef HAVE_NO_UINT64_T
+
+/* Define to 1 if you have the <ogg/ogg.h> header file. */
+#undef HAVE_OGG_OGG_H
+
+/* Define to 1 if you have the <pugixml.hpp> header file. */
+#undef HAVE_PUGIXML_HPP
+
+/* Define if Qt is present */
+#undef HAVE_QT
+
+/* Define if QtDBus is present */
+#undef HAVE_QTDBUS
+
+/* Define to 1 if you have the <stdint.h> header file. */
+#undef HAVE_STDINT_H
+
+/* Define to 1 if you have the <stdio.h> header file. */
+#undef HAVE_STDIO_H
+
+/* Define to 1 if you have the <stdlib.h> header file. */
+#undef HAVE_STDLIB_H
+
+/* Define to 1 if you have the <strings.h> header file. */
+#undef HAVE_STRINGS_H
+
+/* Define to 1 if you have the <string.h> header file. */
+#undef HAVE_STRING_H
+
+/* Define to 1 if you have the <stropts.h> header file. */
+#undef HAVE_STROPTS_H
+
+/* Define to 1 if you have the 'syscall' function. */
+#undef HAVE_SYSCALL
+
+/* Define to 1 if you have the <sys/ioctl.h> header file. */
+#undef HAVE_SYS_IOCTL_H
+
+/* Define to 1 if you have the <sys/stat.h> header file. */
+#undef HAVE_SYS_STAT_H
+
+/* Define to 1 if you have the <sys/syscall.h> header file. */
+#undef HAVE_SYS_SYSCALL_H
+
+/* Define to 1 if you have the <sys/types.h> header file. */
+#undef HAVE_SYS_TYPES_H
+
+/* define if ioctl & TIOCGWINSZ are available */
+#undef HAVE_TIOCGWINSZ
+
+/* Define to 1 if you have the <unistd.h> header file. */
+#undef HAVE_UNISTD_H
+
+/* Defined if the online update check is enabled */
+#undef HAVE_UPDATE_CHECK
+
+/* Define to 1 if you have the <utf8.h> header file. */
+#undef HAVE_UTF8_H
+
+/* Define to 1 if you have the <vorbis/codec.h> header file. */
+#undef HAVE_VORBIS_CODEC_H
+
+/* Define as const if the declaration of iconv() needs const. */
+#undef ICONV_CONST
+
+/* the type to define int64_t manually */
+#undef INT64_TYPE
+
+/* Define to 1 if your C compiler doesn't accept -c and -o together. */
+#undef NO_MINUS_C_MINUS_O
+
+/* Define to the address where bug reports for this package should be sent. */
+#undef PACKAGE_BUGREPORT
+
+/* Define to the full name of this package. */
+#undef PACKAGE_NAME
+
+/* Define to the full name and version of this package. */
+#undef PACKAGE_STRING
+
+/* Define to the one symbol short name of this package. */
+#undef PACKAGE_TARNAME
+
+/* Define to the home page for this package. */
+#undef PACKAGE_URL
+
+/* Define to the version of this package. */
+#undef PACKAGE_VERSION
+
+/* The size of 'int', as computed by sizeof. */
+#undef SIZEOF_INT
+
+/* The size of 'long', as computed by sizeof. */
+#undef SIZEOF_LONG
+
+/* The size of 'long long', as computed by sizeof. */
+#undef SIZEOF_LONG_LONG
+
+/* Define to 1 if all of the C89 standard headers exist (not just the ones
+   required in a freestanding environment). This macro is provided for
+   backward compatibility; new code need not use it. */
+#undef STDC_HEADERS
+
+/* the type to define uint64_t manually */
+#undef UINT64_TYPE
+
+/* Define if precompiled headers are generated and used */
+#undef USE_PRECOMPILED_HEADERS
+
+/* big endian system */
+#undef WORDS_BIGENDIAN

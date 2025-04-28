@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mtx::gui::Merge::AddingAppendingFilesDialog</class>
+ <widget class="QDialog" name="mtx::gui::Merge::AddingAppendingFilesDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>571</width>
+    <height>384</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Adding files via drag &amp; drop or copy &amp; paste</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="lTitle">
+     <property name="text">
+      <string>Adding files via drag &amp; drop or copy &amp; paste</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="Line" name="line">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="lQuestion">
+     <property name="text">
+      <string>What do you want to do with the files you've dragged &amp; dropped or copied &amp; pasted here?</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QRadioButton" name="rbAdd">
+     <property name="text">
+      <string>Add as new source fi&amp;les to the current multiplex settings</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QRadioButton" name="rbAddToNew">
+     <property name="text">
+      <string>Create new &amp;multiplex settings and add to those</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QRadioButton" name="rbAddEachToNew">
+     <property name="text">
+      <string>Create new multiplex settings for &amp;each file</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QRadioButton" name="rbAppend">
+     <property name="text">
+      <string>Append to an e&amp;xisting source file</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QRadioButton" name="rbAddAdditionalParts">
+     <property name="text">
+      <string>Add as additional &amp;parts to an existing source file</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="lAppendTo">
+     <property name="text">
+      <string>If you want to append or add them as additional parts you have to select which source file to append or add them to:</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QComboBox" name="cbFileName"/>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="cbAlwaysCreateNewSettingsForVideoFiles">
+     <property name="text">
+      <string>Alwa&amp;ys create new mutliplex settings for files containing video tracks</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="Line" name="line_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="cbAlwaysUseThisDecision">
+     <property name="text">
+      <string>Alwa&amp;ys use the action selected above and don't ask again</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>14</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QDialogButtonBox" name="buttonBox">
+       <property name="standardButtons">
+        <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>rbAdd</tabstop>
+  <tabstop>rbAddToNew</tabstop>
+  <tabstop>rbAddEachToNew</tabstop>
+  <tabstop>rbAppend</tabstop>
+  <tabstop>rbAddAdditionalParts</tabstop>
+  <tabstop>cbFileName</tabstop>
+  <tabstop>cbAlwaysCreateNewSettingsForVideoFiles</tabstop>
+  <tabstop>cbAlwaysUseThisDecision</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,11 @@
+usr/bin/mkvtoolnix-gui
+usr/share/applications/org.bunkus.mkvtoolnix-gui.desktop
+usr/share/icons/hicolor/*/apps/mkvtoolnix-gui.png
+usr/share/man/*/man1/mkvtoolnix-gui.1
+usr/share/man/man1/mkvtoolnix-gui.1
+usr/share/metainfo/org.bunkus.mkvtoolnix-gui.appdata.xml
+usr/share/mime/packages/org.bunkus.mkvtoolnix-gui.xml
+usr/share/mkvtoolnix/sounds/finished-1.webm
+usr/share/mkvtoolnix/sounds/finished-2.webm
+usr/share/mkvtoolnix/sounds/finished-3.webm
+usr/share/mkvtoolnix/qt_resources.rcc
