@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mtx::gui::PrefsRunProgramWidget</class>
+ <widget class="QWidget" name="mtx::gui::PrefsRunProgramWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>735</width>
+    <height>450</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string notr="true">Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_6">
+   <property name="bottomMargin">
+    <number>3</number>
+   </property>
+   <item>
+    <widget class="QCheckBox" name="cbConfigurationActive">
+     <property name="text">
+      <string>C&amp;onfiguration active</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="2" column="1">
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="QCheckBox" name="cbAfterJobSuccessful">
+         <property name="text">
+          <string>After a job completes &amp;successfully</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="cbAfterJobWarnings">
+         <property name="text">
+          <string>After a job exits with &amp;warnings</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="cbAfterJobError">
+         <property name="text">
+          <string>After a job exits with an &amp;error or the user aborts the job</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="cbAfterJobQueueStopped">
+         <property name="text">
+          <string>After the job &amp;queue has stopped</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QPushButton" name="pbExecuteNow">
+           <property name="text">
+            <string>E&amp;xecute now</string>
+           </property>
+           <property name="icon">
+            <iconset theme="system-run"/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item row="2" column="0" alignment="Qt::AlignTop">
+      <widget class="QLabel" name="lWhenToExecute">
+       <property name="text">
+        <string>When to execute:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="lType">
+       <property name="text">
+        <string>&amp;Type:</string>
+       </property>
+       <property name="buddy">
+        <cstring>cbType</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QComboBox" name="cbType"/>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>&amp;Name:</string>
+       </property>
+       <property name="buddy">
+        <cstring>leName</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="leName">
+       <property name="clearButtonEnabled">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="gbTypeSpecificSettings">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>1</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="title">
+      <string>Type-specific settings</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QStackedWidget" name="typeWidgets">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="emptyTypePage"/>
+        <widget class="QWidget" name="executeProgramTypePage">
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QLabel" name="lCommandLine">
+              <property name="text">
+               <string>&amp;Command line:</string>
+              </property>
+              <property name="buddy">
+               <cstring>leCommandLine</cstring>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="leCommandLine">
+              <property name="clearButtonEnabled">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pbBrowseExecutable">
+              <property name="text">
+               <string notr="true"/>
+              </property>
+              <property name="icon">
+               <iconset theme="document-open"/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pbAddVariable">
+              <property name="text">
+               <string>Add &amp;variable</string>
+              </property>
+              <property name="icon">
+               <iconset theme="list-add"/>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QTextBrowser" name="tbUsageNotes">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>1</horstretch>
+              <verstretch>1</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="html">
+             <string notr="true">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="playAudioFileTypePage">
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <item>
+           <layout class="QGridLayout" name="gridLayout_2">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_3">
+              <property name="text">
+               <string>A&amp;udio file:</string>
+              </property>
+              <property name="buddy">
+               <cstring>leAudioFile</cstring>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <layout class="QHBoxLayout" name="horizontalLayout_2">
+              <item>
+               <widget class="QLineEdit" name="leAudioFile">
+                <property name="clearButtonEnabled">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pbBrowseAudioFile">
+                <property name="text">
+                 <string notr="true"/>
+                </property>
+                <property name="icon">
+                 <iconset theme="document-open"/>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_2">
+              <property name="text">
+               <string>&amp;Volume:</string>
+              </property>
+              <property name="buddy">
+               <cstring>sbVolume</cstring>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="mtx::gui::Util::BasicSpinBox" name="sbVolume">
+              <property name="suffix">
+               <string notr="true">%</string>
+              </property>
+              <property name="maximum">
+               <number>100</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>153</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer_3">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>0</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>mtx::gui::Util::BasicSpinBox</class>
+   <extends>QSpinBox</extends>
+   <header>mkvtoolnix-gui/util/basic_spin_box.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>cbConfigurationActive</tabstop>
+  <tabstop>leName</tabstop>
+  <tabstop>cbType</tabstop>
+  <tabstop>cbAfterJobSuccessful</tabstop>
+  <tabstop>cbAfterJobWarnings</tabstop>
+  <tabstop>cbAfterJobError</tabstop>
+  <tabstop>cbAfterJobQueueStopped</tabstop>
+  <tabstop>pbExecuteNow</tabstop>
+  <tabstop>leCommandLine</tabstop>
+  <tabstop>pbBrowseExecutable</tabstop>
+  <tabstop>pbAddVariable</tabstop>
+  <tabstop>tbUsageNotes</tabstop>
+  <tabstop>leAudioFile</tabstop>
+  <tabstop>pbBrowseAudioFile</tabstop>
+  <tabstop>sbVolume</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../../qt_resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

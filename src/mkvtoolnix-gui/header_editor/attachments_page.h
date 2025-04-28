@@ -1,0 +1,51 @@
+#pragma once
+
+#include "common/common_pch.h"
+
+#include "mkvtoolnix-gui/header_editor/top_level_page.h"
+#include "mkvtoolnix-gui/util/files_drag_drop_handler.h"
+
+namespace libmatroska {
+class KaxAttached;
+}
+
+namespace mtx::gui::HeaderEditor {
+
+namespace Ui {
+class AttachmentsPage;
+}
+
+class PageModel;
+
+using KaxAttachedPtr  = std::shared_ptr<libmatroska::KaxAttached>;
+using KaxAttachedList = QList<KaxAttachedPtr>;
+
+class AttachmentsPage: public TopLevelPage {
+  Q_OBJECT
+
+protected:
+  std::unique_ptr<Ui::AttachmentsPage> ui;
+  mtx::gui::Util::FilesDragDropHandler m_filesDDHandler;
+  KaxAttachedList m_initialAttachments;
+
+public:
+  AttachmentsPage(Tab &parent, KaxAttachedList const &attachments);
+  virtual ~AttachmentsPage();
+
+  virtual void init() override;
+  virtual bool hasThisBeenModified() const override;
+  virtual QString internalIdentifier() const override;
+
+Q_SIGNALS:
+  void filesDropped(QStringList const &fileNames);
+
+public Q_SLOTS:
+  virtual void retranslateUi() override;
+  virtual void rereadChildren(PageModel &model);
+
+protected:
+  virtual void dragEnterEvent(QDragEnterEvent *event) override;
+  virtual void dropEvent(QDropEvent *event) override;
+};
+
+}

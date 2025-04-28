@@ -1,0 +1,973 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mtx::gui::MainWindow</class>
+ <widget class="QMainWindow" name="mtx::gui::MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>970</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string notr="true">MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QScrollArea" name="centralScrollArea">
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>940</width>
+         <height>553</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="mtx::gui::Util::FancyTabWidget" name="tool" native="true"/>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>838</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuGUI">
+    <property name="title">
+     <string notr="true">MKVToolNix &amp;GUI</string>
+    </property>
+    <addaction name="actionGUIPreferences"/>
+    <addaction name="separator"/>
+    <addaction name="actionGUIMergeTool"/>
+    <addaction name="actionGUIExtractionTool"/>
+    <addaction name="actionGUIInfoTool"/>
+    <addaction name="actionGUIHeaderEditor"/>
+    <addaction name="actionGUIChapterEditor"/>
+    <addaction name="actionGUITagEditor"/>
+    <addaction name="actionGUIJobQueue"/>
+    <addaction name="actionGUIJobOutput"/>
+    <addaction name="separator"/>
+    <addaction name="actionGUIExit"/>
+   </widget>
+   <widget class="QMenu" name="menuMerge">
+    <property name="title">
+     <string notr="true">&amp;Multiplexer</string>
+    </property>
+    <widget class="QMenu" name="menuMergeAll">
+     <property name="title">
+      <string>Actions for &amp;all tabs</string>
+     </property>
+     <addaction name="actionMergeSaveAll"/>
+     <addaction name="separator"/>
+     <addaction name="actionMergeCloseAll"/>
+     <addaction name="separator"/>
+     <addaction name="actionMergeStartMuxingAll"/>
+     <addaction name="actionMergeAddAllToJobQueue"/>
+    </widget>
+    <widget class="QMenu" name="menuMergeModifySelectedTracks">
+     <property name="title">
+      <string>Modif&amp;y selected tracks</string>
+     </property>
+    </widget>
+    <addaction name="actionMergeNew"/>
+    <addaction name="actionMergeOpen"/>
+    <addaction name="actionMergeSave"/>
+    <addaction name="actionMergeSaveAs"/>
+    <addaction name="actionMergeSaveOptionFile"/>
+    <addaction name="separator"/>
+    <addaction name="actionMergeSaveAllSingle"/>
+    <addaction name="actionMergeSaveAllSingleAs"/>
+    <addaction name="separator"/>
+    <addaction name="actionMergeClose"/>
+    <addaction name="separator"/>
+    <addaction name="actionMergeStartMuxing"/>
+    <addaction name="actionMergeAddToJobQueue"/>
+    <addaction name="separator"/>
+    <addaction name="menuMergeAll"/>
+    <addaction name="separator"/>
+    <addaction name="actionMergeShowMkvmergeCommandLine"/>
+    <addaction name="separator"/>
+    <addaction name="actionMergeAddFilesFromClipboard"/>
+    <addaction name="separator"/>
+    <addaction name="actionMergeCopyFirstFileNameToTitle"/>
+    <addaction name="actionMergeCopyOutputFileNameToTitle"/>
+    <addaction name="actionMergeCopyTitleToOutputFileName"/>
+    <addaction name="separator"/>
+    <addaction name="menuMergeModifySelectedTracks"/>
+   </widget>
+   <widget class="QMenu" name="menuHeaderEditor">
+    <property name="title">
+     <string notr="true">Header &amp;editor</string>
+    </property>
+    <widget class="QMenu" name="menuHeaderEditorAll">
+     <property name="title">
+      <string>Actions for &amp;all tabs</string>
+     </property>
+     <addaction name="actionHeaderEditorSaveAll"/>
+     <addaction name="separator"/>
+     <addaction name="actionHeaderEditorCloseAll"/>
+    </widget>
+    <widget class="QMenu" name="menuHeaderEditorModifyTrack">
+     <property name="title">
+      <string>Modif&amp;y selected track</string>
+     </property>
+    </widget>
+    <addaction name="actionHeaderEditorOpen"/>
+    <addaction name="actionHeaderEditorReload"/>
+    <addaction name="separator"/>
+    <addaction name="menuHeaderEditorModifyTrack"/>
+    <addaction name="separator"/>
+    <addaction name="actionHeaderEditorValidate"/>
+    <addaction name="actionHeaderEditorSave"/>
+    <addaction name="separator"/>
+    <addaction name="actionHeaderEditorClose"/>
+    <addaction name="separator"/>
+    <addaction name="menuHeaderEditorAll"/>
+   </widget>
+   <widget class="QMenu" name="menuChapterEditor">
+    <property name="title">
+     <string notr="true">&amp;Chapter editor</string>
+    </property>
+    <widget class="QMenu" name="menuChapterEditorAll">
+     <property name="title">
+      <string>Actions for &amp;all tabs</string>
+     </property>
+     <addaction name="actionChapterEditorSaveAll"/>
+     <addaction name="separator"/>
+     <addaction name="actionChapterEditorCloseAll"/>
+    </widget>
+    <addaction name="actionChapterEditorNew"/>
+    <addaction name="separator"/>
+    <addaction name="actionChapterEditorOpen"/>
+    <addaction name="actionChapterEditorAppend"/>
+    <addaction name="actionChapterEditorReload"/>
+    <addaction name="separator"/>
+    <addaction name="actionChapterEditorSave"/>
+    <addaction name="actionChapterEditorSaveAsXml"/>
+    <addaction name="actionChapterEditorSaveToMatroska"/>
+    <addaction name="separator"/>
+    <addaction name="actionChapterEditorClose"/>
+    <addaction name="separator"/>
+    <addaction name="menuChapterEditorAll"/>
+    <addaction name="separator"/>
+    <addaction name="actionChapterEditorRemoveFromMatroska"/>
+   </widget>
+   <widget class="QMenu" name="menuJobOutput">
+    <property name="title">
+     <string notr="true">&amp;Job output</string>
+    </property>
+    <widget class="QMenu" name="menuJobOutputAll">
+     <property name="title">
+      <string>Actions for &amp;all tabs</string>
+     </property>
+     <addaction name="actionJobOutputSaveAll"/>
+     <addaction name="separator"/>
+     <addaction name="actionJobOutputCloseAll"/>
+    </widget>
+    <addaction name="actionJobOutputSave"/>
+    <addaction name="separator"/>
+    <addaction name="actionJobOutputClose"/>
+    <addaction name="separator"/>
+    <addaction name="menuJobOutputAll"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string notr="true">&amp;Help</string>
+    </property>
+    <addaction name="actionHelpMkvmergeDocumentation"/>
+    <addaction name="actionHelpForum"/>
+    <addaction name="actionHelpFAQ"/>
+    <addaction name="actionHelpKnownProblems"/>
+    <addaction name="actionHelpReportBug"/>
+    <addaction name="actionHelpSystemInformation"/>
+    <addaction name="separator"/>
+    <addaction name="actionHelpCodeOfConduct"/>
+    <addaction name="separator"/>
+    <addaction name="actionHelpWebSite"/>
+    <addaction name="separator"/>
+    <addaction name="actionHelpCheckForUpdates"/>
+   </widget>
+   <widget class="QMenu" name="menuJobQueue">
+    <property name="title">
+     <string notr="true">&amp;Job queue</string>
+    </property>
+    <widget class="QMenu" name="menuStopJobQueue">
+     <property name="title">
+      <string>S&amp;top job queue</string>
+     </property>
+     <property name="icon">
+      <iconset theme="media-playback-stop"/>
+     </property>
+     <addaction name="actionJobQueueStopAfterCurrentJob"/>
+     <addaction name="actionJobQueueStopImmediately"/>
+    </widget>
+    <addaction name="actionJobQueueStartAllPending"/>
+    <addaction name="separator"/>
+    <addaction name="menuStopJobQueue"/>
+    <addaction name="separator"/>
+    <addaction name="actionJobQueueRemoveDoneOk"/>
+    <addaction name="actionJobQueueRemoveDone"/>
+    <addaction name="actionJobQueueRemoveAll"/>
+    <addaction name="separator"/>
+    <addaction name="actionJobQueueAcknowledgeAllWarnings"/>
+    <addaction name="actionJobQueueAcknowledgeAllErrors"/>
+    <addaction name="actionJobQueueAcknowledgeAllWarningsErrors"/>
+   </widget>
+   <widget class="QMenu" name="menuWindow">
+    <property name="title">
+     <string>&amp;Window</string>
+    </property>
+    <addaction name="actionWindowNext"/>
+    <addaction name="actionWindowPrevious"/>
+   </widget>
+   <widget class="QMenu" name="menuInfo">
+    <property name="title">
+     <string>&amp;Info tool</string>
+    </property>
+    <addaction name="actionInfoOpen"/>
+    <addaction name="separator"/>
+    <addaction name="actionInfoSave"/>
+    <addaction name="separator"/>
+    <addaction name="actionInfoClose"/>
+    <addaction name="separator"/>
+    <addaction name="actionInfoCloseAll"/>
+   </widget>
+   <widget class="QMenu" name="menuDebugging">
+    <property name="title">
+     <string notr="true">&amp;Debugging</string>
+    </property>
+    <widget class="QMenu" name="menuDebuggingMerge">
+     <property name="title">
+      <string notr="true">&amp;Multiplexer</string>
+     </property>
+     <addaction name="actionDbgMergeInputSetupHorizontalScrollAreaInputLayout"/>
+     <addaction name="actionDbgMergeInputSetupHorizontalTwoColumnsInputLayout"/>
+     <addaction name="actionDbgMergeInputSetupVerticalTabWidgetInputLayout"/>
+    </widget>
+    <addaction name="menuDebuggingMerge"/>
+   </widget>
+   <addaction name="menuGUI"/>
+   <addaction name="menuMerge"/>
+   <addaction name="menuInfo"/>
+   <addaction name="menuHeaderEditor"/>
+   <addaction name="menuChapterEditor"/>
+   <addaction name="menuJobQueue"/>
+   <addaction name="menuJobOutput"/>
+   <addaction name="menuWindow"/>
+   <addaction name="menuHelp"/>
+   <addaction name="menuDebugging"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionMergeNew">
+   <property name="icon">
+    <iconset theme="document-new"/>
+   </property>
+   <property name="text">
+    <string>&amp;New</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionMergeSave">
+   <property name="icon">
+    <iconset theme="document-save"/>
+   </property>
+   <property name="text">
+    <string>&amp;Save settings</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionMergeOpen">
+   <property name="icon">
+    <iconset theme="document-open"/>
+   </property>
+   <property name="text">
+    <string>&amp;Open settings</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionMergeSaveAs">
+   <property name="icon">
+    <iconset theme="document-save-as"/>
+   </property>
+   <property name="text">
+    <string>Sa&amp;ve settings as</string>
+   </property>
+  </action>
+  <action name="actionGUIExit">
+   <property name="icon">
+    <iconset theme="application-exit"/>
+   </property>
+   <property name="text">
+    <string>E&amp;xit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionMergeStartMuxing">
+   <property name="icon">
+    <iconset theme="media-playback-start"/>
+   </property>
+   <property name="text">
+    <string>Start &amp;multiplexing</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionMergeSaveOptionFile">
+   <property name="text">
+    <string>C&amp;reate option file</string>
+   </property>
+  </action>
+  <action name="actionMergeShowMkvmergeCommandLine">
+   <property name="icon">
+    <iconset theme="utilities-terminal"/>
+   </property>
+   <property name="text">
+    <string>S&amp;how command line</string>
+   </property>
+  </action>
+  <action name="actionMergeCopyCommandLineToClipboard">
+   <property name="icon">
+    <iconset theme="edit-copy"/>
+   </property>
+   <property name="text">
+    <string>&amp;Copy command line to clipboard</string>
+   </property>
+  </action>
+  <action name="actionMergeAddToJobQueue">
+   <property name="icon">
+    <iconset theme="task-delegate"/>
+   </property>
+   <property name="text">
+    <string>Add to job &amp;queue</string>
+   </property>
+  </action>
+  <action name="actionGUIPreferences">
+   <property name="icon">
+    <iconset theme="preferences-other"/>
+   </property>
+   <property name="text">
+    <string>&amp;Preferences</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="actionHelpCheckForUpdates">
+   <property name="icon">
+    <iconset theme="system-software-update"/>
+   </property>
+   <property name="text">
+    <string>Check for &amp;updates</string>
+   </property>
+  </action>
+  <action name="actionHelpCodeOfConduct">
+   <property name="icon">
+    <iconset theme="application-pgp-signature"/>
+   </property>
+   <property name="text">
+    <string>&amp;Code of Conduct</string>
+   </property>
+  </action>
+  <action name="actionHeaderEditorOpen">
+   <property name="icon">
+    <iconset theme="document-open"/>
+   </property>
+   <property name="text">
+    <string>&amp;Open Matroska or WebM file</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionHeaderEditorClose">
+   <property name="icon">
+    <iconset theme="document-close"/>
+   </property>
+   <property name="text">
+    <string>&amp;Close</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+W</string>
+   </property>
+  </action>
+  <action name="actionHeaderEditorSave">
+   <property name="icon">
+    <iconset theme="document-save"/>
+   </property>
+   <property name="text">
+    <string>&amp;Save</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionHeaderEditorReload">
+   <property name="icon">
+    <iconset theme="document-revert"/>
+   </property>
+   <property name="text">
+    <string>&amp;Reload</string>
+   </property>
+  </action>
+  <action name="actionHeaderEditorValidate">
+   <property name="icon">
+    <iconset theme="dialog-ok-apply"/>
+   </property>
+   <property name="text">
+    <string>&amp;Validate values</string>
+   </property>
+  </action>
+  <action name="actionChapterEditorNew">
+   <property name="icon">
+    <iconset theme="document-new"/>
+   </property>
+   <property name="text">
+    <string>&amp;New</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionChapterEditorOpen">
+   <property name="icon">
+    <iconset theme="document-open"/>
+   </property>
+   <property name="text">
+    <string>&amp;Open supported chapter file format</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionChapterEditorAppend">
+   <property name="text">
+    <string>A&amp;ppend chapters from supported file format</string>
+   </property>
+  </action>
+  <action name="actionChapterEditorClose">
+   <property name="icon">
+    <iconset theme="document-close"/>
+   </property>
+   <property name="text">
+    <string>&amp;Close</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+W</string>
+   </property>
+  </action>
+  <action name="actionChapterEditorSave">
+   <property name="icon">
+    <iconset theme="document-save"/>
+   </property>
+   <property name="text">
+    <string>&amp;Save</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionChapterEditorSaveAsXml">
+   <property name="text">
+    <string>Save as &amp;XML file</string>
+   </property>
+  </action>
+  <action name="actionChapterEditorSaveToMatroska">
+   <property name="text">
+    <string>Save to &amp;Matroska or WebM file</string>
+   </property>
+  </action>
+  <action name="actionChapterEditorReload">
+   <property name="icon">
+    <iconset theme="document-revert"/>
+   </property>
+   <property name="text">
+    <string>&amp;Reload</string>
+   </property>
+  </action>
+  <action name="actionGUIMergeTool">
+   <property name="icon">
+    <iconset theme="merge"/>
+   </property>
+   <property name="text">
+    <string>&amp;Multiplexer</string>
+   </property>
+  </action>
+  <action name="actionGUIExtractionTool">
+   <property name="icon">
+    <iconset theme="split"/>
+   </property>
+   <property name="text">
+    <string>&amp;Extraction tool</string>
+   </property>
+  </action>
+  <action name="actionGUIInfoTool">
+   <property name="icon">
+    <iconset theme="document-preview-archive"/>
+   </property>
+   <property name="text">
+    <string>&amp;Info tool</string>
+   </property>
+  </action>
+  <action name="actionGUIHeaderEditor">
+   <property name="icon">
+    <iconset theme="document-edit"/>
+   </property>
+   <property name="text">
+    <string>&amp;Header editor</string>
+   </property>
+  </action>
+  <action name="actionGUIChapterEditor">
+   <property name="icon">
+    <iconset theme="story-editor"/>
+   </property>
+   <property name="text">
+    <string>&amp;Chapter editor</string>
+   </property>
+  </action>
+  <action name="actionGUIJobQueue">
+   <property name="icon">
+    <iconset theme="view-task"/>
+   </property>
+   <property name="text">
+    <string>&amp;Job queue</string>
+   </property>
+  </action>
+  <action name="actionGUIJobOutput">
+   <property name="icon">
+    <iconset theme="system-run"/>
+   </property>
+   <property name="text">
+    <string>Job &amp;output</string>
+   </property>
+  </action>
+  <action name="actionGUITagEditor">
+   <property name="icon">
+    <iconset theme="document-edit-sign-encrypt"/>
+   </property>
+   <property name="text">
+    <string>&amp;Tag editor</string>
+   </property>
+  </action>
+  <action name="actionMergeClose">
+   <property name="icon">
+    <iconset theme="document-close"/>
+   </property>
+   <property name="text">
+    <string>&amp;Close</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+W</string>
+   </property>
+  </action>
+  <action name="actionJobOutputSave">
+   <property name="icon">
+    <iconset theme="document-save"/>
+   </property>
+   <property name="text">
+    <string>&amp;Save</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionJobOutputClose">
+   <property name="icon">
+    <iconset theme="document-close"/>
+   </property>
+   <property name="text">
+    <string>&amp;Close</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+W</string>
+   </property>
+  </action>
+  <action name="actionHelpWebSite">
+   <property name="icon">
+    <iconset theme="applications-internet"/>
+   </property>
+   <property name="text">
+    <string>MKVToolNix &amp;web site</string>
+   </property>
+  </action>
+  <action name="actionHelpForum">
+   <property name="icon">
+    <iconset theme="applications-internet"/>
+   </property>
+   <property name="text">
+    <string>Community &amp;&amp; &amp;help forum</string>
+   </property>
+  </action>
+  <action name="actionHelpFAQ">
+   <property name="icon">
+    <iconset theme="applications-internet"/>
+   </property>
+   <property name="text">
+    <string>&amp;FAQ</string>
+   </property>
+  </action>
+  <action name="actionHelpKnownProblems">
+   <property name="icon">
+    <iconset theme="applications-internet"/>
+   </property>
+   <property name="text">
+    <string>Known &amp;problems in recent releases</string>
+   </property>
+  </action>
+  <action name="actionHelpReportBug">
+   <property name="icon">
+    <iconset theme="kbugbuster"/>
+   </property>
+   <property name="text">
+    <string>Report a &amp;bug</string>
+   </property>
+  </action>
+  <action name="actionHelpSystemInformation">
+   <property name="text">
+    <string>S&amp;ystem information</string>
+   </property>
+  </action>
+  <action name="actionHelpMkvmergeDocumentation">
+   <property name="icon">
+    <iconset theme="applications-internet"/>
+   </property>
+   <property name="text">
+    <string>mkv&amp;merge documentation</string>
+   </property>
+  </action>
+  <action name="actionJobQueueRemoveDoneOk">
+   <property name="text">
+    <string>Remove &amp;successfully completed jobs</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="actionJobQueueRemoveAll">
+   <property name="icon">
+    <iconset theme="archive-remove"/>
+   </property>
+   <property name="text">
+    <string>Remove a&amp;ll jobs</string>
+   </property>
+  </action>
+  <action name="actionJobQueueAcknowledgeAllWarnings">
+   <property name="text">
+    <string>Acknowledge all &amp;warnings</string>
+   </property>
+  </action>
+  <action name="actionJobQueueAcknowledgeAllErrors">
+   <property name="text">
+    <string>Acknowledge all &amp;errors</string>
+   </property>
+  </action>
+  <action name="actionJobQueueAcknowledgeAllWarningsErrors">
+   <property name="icon">
+    <iconset theme="dialog-ok-apply"/>
+   </property>
+   <property name="text">
+    <string>Acknowledge &amp;all warnings and errors</string>
+   </property>
+  </action>
+  <action name="actionJobQueueRemoveDone">
+   <property name="text">
+    <string>Remove &amp;completed jobs</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+L</string>
+   </property>
+  </action>
+  <action name="actionJobQueueStartAllPending">
+   <property name="icon">
+    <iconset theme="media-playback-start"/>
+   </property>
+   <property name="text">
+    <string>Sta&amp;rt all pending jobs</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionJobQueueStopAfterCurrentJob">
+   <property name="text">
+    <string>Stop &amp;after all running jobs have finished</string>
+   </property>
+  </action>
+  <action name="actionJobQueueStopImmediately">
+   <property name="text">
+    <string>Abort all running jobs and stop &amp;immediately</string>
+   </property>
+  </action>
+  <action name="actionMergeCopyFirstFileNameToTitle">
+   <property name="text">
+    <string>Copy &amp;first source file's name to file title</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="actionMergeCopyOutputFileNameToTitle">
+   <property name="text">
+    <string>Copy &amp;destination file's name to file title</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="actionMergeCopyTitleToOutputFileName">
+   <property name="text">
+    <string>Copy file &amp;title to destination file name</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
+   </property>
+  </action>
+  <action name="actionChapterEditorRemoveFromMatroska">
+   <property name="text">
+    <string>Remo&amp;ve chapters from existing Matroska file</string>
+   </property>
+  </action>
+  <action name="actionChapterEditorCloseAll">
+   <property name="icon">
+    <iconset theme="document-close"/>
+   </property>
+   <property name="text">
+    <string>&amp;Close</string>
+   </property>
+  </action>
+  <action name="actionChapterEditorSaveAll">
+   <property name="icon">
+    <iconset theme="document-save"/>
+   </property>
+   <property name="text">
+    <string>&amp;Save</string>
+   </property>
+  </action>
+  <action name="actionHeaderEditorCloseAll">
+   <property name="icon">
+    <iconset theme="document-close"/>
+   </property>
+   <property name="text">
+    <string>&amp;Close</string>
+   </property>
+  </action>
+  <action name="actionHeaderEditorSaveAll">
+   <property name="icon">
+    <iconset theme="document-save"/>
+   </property>
+   <property name="text">
+    <string>&amp;Save</string>
+   </property>
+  </action>
+  <action name="actionMergeCloseAll">
+   <property name="icon">
+    <iconset theme="document-close"/>
+   </property>
+   <property name="text">
+    <string>&amp;Close</string>
+   </property>
+  </action>
+  <action name="actionMergeSaveAll">
+   <property name="icon">
+    <iconset theme="document-save"/>
+   </property>
+   <property name="text">
+    <string>&amp;Save settings</string>
+   </property>
+  </action>
+  <action name="actionMergeStartMuxingAll">
+   <property name="icon">
+    <iconset theme="media-playback-start"/>
+   </property>
+   <property name="text">
+    <string>Start &amp;multiplexing</string>
+   </property>
+  </action>
+  <action name="actionMergeAddAllToJobQueue">
+   <property name="icon">
+    <iconset theme="task-delegate"/>
+   </property>
+   <property name="text">
+    <string>Add to job &amp;queue</string>
+   </property>
+  </action>
+  <action name="actionJobOutputCloseAll">
+   <property name="icon">
+    <iconset theme="document-close"/>
+   </property>
+   <property name="text">
+    <string>&amp;Close</string>
+   </property>
+  </action>
+  <action name="actionJobOutputSaveAll">
+   <property name="icon">
+    <iconset theme="document-save"/>
+   </property>
+   <property name="text">
+    <string>&amp;Save</string>
+   </property>
+  </action>
+  <action name="actionWindowNext">
+   <property name="text">
+    <string notr="true">Next</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F6</string>
+   </property>
+  </action>
+  <action name="actionWindowPrevious">
+   <property name="text">
+    <string notr="true">Previous</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+F6</string>
+   </property>
+  </action>
+  <action name="actionInfoOpen">
+   <property name="icon">
+    <iconset theme="document-open-folder"/>
+   </property>
+   <property name="text">
+    <string>&amp;Open Matroska or WebM file</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionInfoClose">
+   <property name="icon">
+    <iconset theme="document-close"/>
+   </property>
+   <property name="text">
+    <string>&amp;Close</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+W</string>
+   </property>
+  </action>
+  <action name="actionInfoCloseAll">
+   <property name="icon">
+    <iconset theme="document-close"/>
+   </property>
+   <property name="text">
+    <string>Close &amp;all tabs</string>
+   </property>
+  </action>
+  <action name="actionInfoSave">
+   <property name="icon">
+    <iconset theme="document-save"/>
+   </property>
+   <property name="text">
+    <string>&amp;Save</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionMergeAddFilesFromClipboard">
+   <property name="text">
+    <string>Add files from clip&amp;board</string>
+   </property>
+  </action>
+  <action name="actionDbgMergeInputSetupHorizontalScrollAreaInputLayout">
+   <property name="text">
+    <string notr="true">Input: setupHorizontal&amp;ScrollAreaInputLayout</string>
+   </property>
+  </action>
+  <action name="actionDbgMergeInputSetupHorizontalTwoColumnsInputLayout">
+   <property name="text">
+    <string notr="true">Input: setupHorizontal&amp;TwoColumnsInputLayout</string>
+   </property>
+  </action>
+  <action name="actionDbgMergeInputSetupVerticalTabWidgetInputLayout">
+   <property name="text">
+    <string notr="true">Input: setup&amp;VerticalTabWidgetInputLayout</string>
+   </property>
+  </action>
+  <action name="actionMergeSaveAllSingle">
+   <property name="icon">
+    <iconset theme="QIcon::ThemeIcon::DocumentSave"/>
+   </property>
+   <property name="text">
+    <string>Save all settings to single file</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="actionMergeSaveAllSingleAs">
+   <property name="icon">
+    <iconset theme="QIcon::ThemeIcon::DocumentSaveAs"/>
+   </property>
+   <property name="text">
+    <string>Save all settings to single file as</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>mtx::gui::Util::FancyTabWidget</class>
+   <extends>QWidget</extends>
+   <header>mkvtoolnix-gui/util/fancy_tab_widget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../../qt_resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,2946 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mtx::gui::PreferencesDialog</class>
+ <widget class="QDialog" name="mtx::gui::PreferencesDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>850</width>
+    <height>745</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MKVToolNix GUI preferences</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_24">
+   <item>
+    <widget class="QSplitter" name="pagesSplitter">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="childrenCollapsible">
+      <bool>false</bool>
+     </property>
+     <widget class="QTreeView" name="pageSelector">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>100</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>48</width>
+        <height>48</height>
+       </size>
+      </property>
+      <property name="textElideMode">
+       <enum>Qt::ElideNone</enum>
+      </property>
+      <property name="headerHidden">
+       <bool>true</bool>
+      </property>
+      <property name="expandsOnDoubleClick">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QStackedWidget" name="pages">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="pGuiGeneral">
+       <layout class="QVBoxLayout" name="verticalLayout_10">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QGroupBox" name="groupBox">
+          <property name="title">
+           <string>General options</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <layout class="QGridLayout" name="gridLayout_4">
+             <item row="3" column="0">
+              <widget class="QLabel" name="label_24">
+               <property name="text">
+                <string>Number of &amp;recently used entries to remember:</string>
+               </property>
+               <property name="buddy">
+                <cstring>sbGuiNumRecentlyUsedStrings</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QComboBox" name="cbGuiInterfaceLanguage">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_3">
+               <property name="text">
+                <string>Interface &amp;language:</string>
+               </property>
+               <property name="buddy">
+                <cstring>cbGuiInterfaceLanguage</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="mtx::gui::Util::BasicSpinBox" name="sbGuiNumRecentlyUsedStrings">
+               <property name="minimum">
+                <number>1</number>
+               </property>
+               <property name="maximum">
+                <number>9999</number>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <layout class="QHBoxLayout" name="horizontalLayout_10">
+               <item>
+                <widget class="QFontComboBox" name="fcbGuiFontFamily">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="mtx::gui::Util::BasicSpinBox" name="sbGuiFontPointSize">
+                 <property name="minimum">
+                  <number>5</number>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_12">
+               <property name="text">
+                <string>&amp;Font &amp;&amp; size:</string>
+               </property>
+               <property name="buddy">
+                <cstring>fcbGuiFontFamily</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QComboBox" name="cbGuiPalette">
+               <item>
+                <property name="text">
+                 <string>Use system settings</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Light</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Dark</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="cbGuiPaletteLabel">
+               <property name="text">
+                <string>Color palette:</string>
+               </property>
+               <property name="buddy">
+                <cstring>cbGuiPalette</cstring>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="cbGuiStayOnTop">
+             <property name="text">
+              <string>Stay on top of other &amp;windows</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="cbGuiDisableHighDPIScaling">
+             <property name="text">
+              <string>Disable scaling for &amp;high DPI displays</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="cbGuiDisableToolTips">
+             <property name="text">
+              <string>Disable &amp;tooltips</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="cbGuiCheckForUpdates">
+             <property name="text">
+              <string>Check online for available &amp;updates</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="cbGuiUseLegacyFontMIMETypes">
+             <property name="text">
+              <string>Use legac&amp;y MIME types for font attachments</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="cbGuiShowDebuggingMenu">
+             <property name="text">
+              <string>Show debu&amp;gging menu</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_16">
+          <property name="title">
+           <string>Layout</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_30">
+           <item>
+            <layout class="QGridLayout" name="gridLayout_9">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_9">
+               <property name="text">
+                <string>Tab &amp;position in tab widgets:</string>
+               </property>
+               <property name="buddy">
+                <cstring>cbGuiTabPositions</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QComboBox" name="cbGuiTabPositions">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="cbGuiElideTabHeaderLabels">
+             <property name="text">
+              <string>&amp;Elide text in tab headers of tab widgets</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="cbGuiShowToolSelector">
+             <property name="text">
+              <string>Show the tool &amp;selector</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="cbGuiShowMoveUpDownButtons">
+             <property name="text">
+              <string>Show &amp;buttons for moving list view entries up and down</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_6">
+          <property name="title">
+           <string>Warnings</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="QCheckBox" name="cbGuiWarnBeforeClosingModifiedTabs">
+             <property name="text">
+              <string>Warn before &amp;closing modified tabs</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="cbGuiWarnBeforeAbortingJobs">
+             <property name="text">
+              <string>Warn before &amp;aborting running jobs</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="cbGuiWarnBeforeOverwriting">
+             <property name="text">
+              <string>Warn before &amp;overwriting existing items (files, jobs etc.)</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>68</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="pGuiOftenUsedSelections">
+       <layout class="QVBoxLayout" name="verticalLayout_8">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QTabWidget" name="tbOftenUsedXYZ">
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="oftenUsedLanguagesTab">
+           <attribute name="title">
+            <string>&amp;Languages</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_17">
+            <item>
+             <widget class="mtx::gui::Util::SideBySideMultiSelect" name="tbOftenUsedLanguages" native="true">
+              <property name="focusPolicy">
+               <enum>Qt::StrongFocus</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="cbOftenUsedLanguagesOnly">
+              <property name="text">
+               <string>&amp;Only include often used entries in selections</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="oftenUsedRegionsTab">
+           <attribute name="title">
+            <string>C&amp;ountries &amp;&amp; regions</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_18">
+            <item>
+             <widget class="mtx::gui::Util::SideBySideMultiSelect" name="tbOftenUsedRegions" native="true">
+              <property name="focusPolicy">
+               <enum>Qt::StrongFocus</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="cbOftenUsedRegionsOnly">
+              <property name="text">
+               <string>&amp;Only include often used entries in selections</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="oftenUsedCharacterSetsTab">
+           <attribute name="title">
+            <string>&amp;Character sets</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_19">
+            <item>
+             <widget class="mtx::gui::Util::SideBySideMultiSelect" name="tbOftenUsedCharacterSets" native="true">
+              <property name="focusPolicy">
+               <enum>Qt::StrongFocus</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="cbOftenUsedCharacterSetsOnly">
+              <property name="text">
+               <string>&amp;Only include often used entries in selections</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="pGuiLanguages">
+       <layout class="QVBoxLayout" name="verticalLayout_52">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QGroupBox" name="groupBox_27">
+          <property name="title">
+           <string>General options</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_49">
+           <item>
+            <layout class="QGridLayout" name="gridLayout_11">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_26">
+               <property name="text">
+                <string>Default IETF BCP 47 language editing &amp;mode:</string>
+               </property>
+               <property name="buddy">
+                <cstring>cbGuiBCP47LanguageEditingMode</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QComboBox" name="cbGuiBCP47LanguageEditingMode"/>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_11">
+               <property name="text">
+                <string>IETF BCP 47 &amp;normalization mode:</string>
+               </property>
+               <property name="buddy">
+                <cstring>cbGuiBCP47NormalizationMode</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QComboBox" name="cbGuiBCP47NormalizationMode">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="cbUseISO639_3Languages">
+             <property name="text">
+              <string>Enable language codes from &amp;ISO 639-3 &amp;&amp; 639-5</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_26">
+          <property name="title">
+           <string>Language shortcuts</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_18">
+           <item>
+            <widget class="QTreeWidget" name="twGuiLanguageShortcuts">
+             <property name="dragEnabled">
+              <bool>true</bool>
+             </property>
+             <property name="dragDropMode">
+              <enum>QAbstractItemView::InternalMove</enum>
+             </property>
+             <property name="defaultDropAction">
+              <enum>Qt::MoveAction</enum>
+             </property>
+             <property name="selectionMode">
+              <enum>QAbstractItemView::ExtendedSelection</enum>
+             </property>
+             <property name="selectionBehavior">
+              <enum>QAbstractItemView::SelectRows</enum>
+             </property>
+             <property name="rootIsDecorated">
+              <bool>false</bool>
+             </property>
+             <column>
+              <property name="text">
+               <string>Language</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Track name</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_48">
+             <item>
+              <widget class="QPushButton" name="pbGuiAddLanguageShortcut">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string notr="true"/>
+               </property>
+               <property name="icon">
+                <iconset theme="list-add"/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pbGuiEditLanguageShortcut">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string notr="true"/>
+               </property>
+               <property name="icon">
+                <iconset theme="edit-entry"/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pbGuiRemoveLanguageShortcuts">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string notr="true"/>
+               </property>
+               <property name="icon">
+                <iconset theme="list-remove"/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_3">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>0</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="pMergeGeneral">
+       <layout class="QVBoxLayout" name="verticalLayout_45">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QGroupBox" name="groupBox_3">
+          <property name="title">
+           <string>General options</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <layout class="QGridLayout" name="gridLayout_2">
+             <item row="5" column="1">
+              <layout class="QHBoxLayout" name="horizontalLayout_16">
+               <item>
+                <widget class="QLineEdit" name="leMMediaInfoExe"/>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pbMBrowseMediaInfoExe">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="icon">
+                  <iconset theme="document-open-folder"/>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item row="2" column="1">
+              <widget class="QComboBox" name="cbMProcessPriority">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_19">
+               <property name="text">
+                <string>Warn about missing &amp;audio tracks:</string>
+               </property>
+               <property name="buddy">
+                <cstring>cbMWarnMissingAudioTrack</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="label_16">
+               <property name="text">
+                <string>Probe &amp;range percentage:</string>
+               </property>
+               <property name="buddy">
+                <cstring>cbMProbeRangePercentage</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QComboBox" name="cbMWarnMissingAudioTrack"/>
+             </item>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_6">
+               <property name="text">
+                <string>Clearing settings auto&amp;matically:</string>
+               </property>
+               <property name="buddy">
+                <cstring>cbMClearMergeSettings</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QComboBox" name="cbMClearMergeSettings">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <item>
+                <property name="text">
+                 <string>No</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Create new settings</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Remove source files</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Close current settings</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QDoubleSpinBox" name="cbMProbeRangePercentage">
+               <property name="minimum">
+                <double>0.010000000000000</double>
+               </property>
+               <property name="singleStep">
+                <double>0.100000000000000</double>
+               </property>
+               <property name="value">
+                <double>0.300000000000000</double>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="0">
+              <widget class="QLabel" name="label_20">
+               <property name="text">
+                <string>Location of MediaInfo &amp;GUI:</string>
+               </property>
+               <property name="buddy">
+                <cstring>leMMediaInfoExe</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="label_5">
+               <property name="text">
+                <string>Process &amp;priority:</string>
+               </property>
+               <property name="buddy">
+                <cstring>cbMProcessPriority</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1">
+              <widget class="QComboBox" name="cbMDefaultCommandLineEscapeMode"/>
+             </item>
+             <item row="4" column="0">
+              <widget class="QLabel" name="label_21">
+               <property name="text">
+                <string>Default command-&amp;line escape mode:</string>
+               </property>
+               <property name="buddy">
+                <cstring>cbMDefaultCommandLineEscapeMode</cstring>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="cbMEnsureAtLeastOneTrackEnabled">
+             <property name="text">
+              <string>&amp;Ensure at least one track of each type has its &quot;track enabled&quot; flag set</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_23">
+          <property name="title">
+           <string>Adding files</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_43">
+           <item>
+            <layout class="QGridLayout" name="gridLayout_10">
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_23">
+               <property name="text">
+                <string>When adding files via &amp;drag &amp;&amp; drop/copy &amp;&amp; paste:</string>
+               </property>
+               <property name="buddy">
+                <cstring>cbMDragAndDropFilesPolicy</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QComboBox" name="cbMDragAndDropFilesPolicy">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_13">
+               <property name="text">
+                <string>When adding m&amp;ultiple files via &quot;add source files&quot;:</string>
+               </property>
+               <property name="buddy">
+                <cstring>cbMAddingAppendingFilesPolicy</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QComboBox" name="cbMAddingAppendingFilesPolicy">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="label_25">
+               <property name="text">
+                <string>When adding d&amp;irectories via drag &amp;&amp; drop/copy &amp;&amp; paste:</string>
+               </property>
+               <property name="buddy">
+                <cstring>cbMDragAndDropDirectoriesPolicy</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QComboBox" name="cbMDragAndDropDirectoriesPolicy">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="cbMAlwaysCreateSettingsForVideoFiles">
+             <property name="text">
+              <string>Alwa&amp;ys create new mutliplex settings for files containing video tracks</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="cbMShowDNDZones">
+             <property name="text">
+              <string>Show special drag &amp;&amp; drop &amp;zones</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="cbMSortFilesTracksByTypeWhenAdding">
+             <property name="text">
+              <string>S&amp;ort files &amp;&amp; tracks by track type when adding files</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="cbMReconstructSequencesWhenAdding">
+             <property name="text">
+              <string>Detect file name se&amp;quences when adding multiple files</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_25">
+          <property name="title">
+           <string>Attachments</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_47">
+           <item>
+            <widget class="QCheckBox" name="cbMAttachmentAlwaysSkipForExistingName">
+             <property name="text">
+              <string>Always s&amp;kip while attaching new files when attachment with same name exists</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_12">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="pMergeLayout">
+       <layout class="QVBoxLayout" name="verticalLayout_53">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QGroupBox" name="groupBox_12">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>Layout</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_20">
+           <item>
+            <widget class="QCheckBox" name="cbMAlwaysShowOutputFileControls">
+             <property name="text">
+              <string>Always show the destination file controls &amp;below tabs</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="cbMTrackPropertiesLayoutLabel">
+             <property name="text">
+              <string>Position for the track properties on the &quot;input&quot; tab:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_8">
+             <item>
+              <spacer name="horizontalSpacer_8">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Fixed</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_12">
+               <item>
+                <widget class="QRadioButton" name="rbMTrackPropertiesLayoutHorizontalScrollArea">
+                 <property name="text">
+                  <string>In a &amp;scrollable column on the right of the files and tracks</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QRadioButton" name="rbMTrackPropertiesLayoutHorizontalTwoColumns">
+                 <property name="text">
+                  <string>In &amp;two fixed columns on the right of the files and tracks</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QRadioButton" name="rbMTrackPropertiesLayoutVerticalTabWidget">
+                 <property name="text">
+                  <string>In a tab &amp;widget below the files and tracks</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_24">
+          <property name="title">
+           <string>File &amp;&amp; track colors</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_46">
+           <item>
+            <widget class="QCheckBox" name="cbMUseFileAndTrackColors">
+             <property name="text">
+              <string>Use &amp;file &amp;&amp; track colors</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <item>
+              <widget class="QListWidget" name="lwMFileColors">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>200</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="editTriggers">
+                <set>QAbstractItemView::NoEditTriggers</set>
+               </property>
+               <property name="dragEnabled">
+                <bool>true</bool>
+               </property>
+               <property name="dragDropMode">
+                <enum>QAbstractItemView::InternalMove</enum>
+               </property>
+               <property name="defaultDropAction">
+                <enum>Qt::MoveAction</enum>
+               </property>
+               <property name="selectionMode">
+                <enum>QAbstractItemView::ExtendedSelection</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_37">
+               <item>
+                <widget class="QPushButton" name="pbMAddFileColor">
+                 <property name="text">
+                  <string notr="true"/>
+                 </property>
+                 <property name="icon">
+                  <iconset theme="list-add"/>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pbMRemoveFileColors">
+                 <property name="text">
+                  <string notr="true"/>
+                 </property>
+                 <property name="icon">
+                  <iconset theme="list-remove"/>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pbMEditFileColor">
+                 <property name="text">
+                  <string notr="true"/>
+                 </property>
+                 <property name="icon">
+                  <iconset theme="document-edit"/>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="verticalSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pbMRevertFileColorsToDefault">
+                 <property name="toolTip">
+                  <string>Revert to default colors</string>
+                 </property>
+                 <property name="text">
+                  <string notr="true"/>
+                 </property>
+                 <property name="icon">
+                  <iconset theme="document-revert"/>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="verticalSpacer_7">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::MinimumExpanding</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_11">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_13">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>276</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="pMergePredefinedValues">
+       <layout class="QVBoxLayout" name="verticalLayout_39">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_15">
+          <item>
+           <widget class="QGroupBox" name="gpMPredefinedVideoTrackNames">
+            <property name="title">
+             <string>Predefined video track names</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_50">
+             <item>
+              <widget class="mtx::gui::Util::StringListConfigurationWidget" name="lwMPredefinedVideoTrackNames" native="true"/>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="gpMPredefinedAudioTrackNames">
+            <property name="title">
+             <string>Predefined audio track names</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_51">
+             <item>
+              <widget class="mtx::gui::Util::StringListConfigurationWidget" name="lwMPredefinedAudioTrackNames" native="true"/>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="gpMPredefinedSubtitleTrackNames">
+            <property name="title">
+             <string>Predefined subtitle track names</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_21">
+             <item>
+              <widget class="mtx::gui::Util::StringListConfigurationWidget" name="lwMPredefinedSubtitleTrackNames" native="true"/>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_14">
+          <item>
+           <widget class="QGroupBox" name="gbMPredefinedSplitSizes">
+            <property name="title">
+             <string>Predefined split sizes</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_22">
+             <item>
+              <widget class="mtx::gui::Util::StringListConfigurationWidget" name="lwMPredefinedSplitSizes" native="true"/>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="gbMPredefinedSplitDurations">
+            <property name="title">
+             <string>Predefined split durations</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_38">
+             <item>
+              <widget class="mtx::gui::Util::StringListConfigurationWidget" name="lwMPredefinedSplitDurations" native="true"/>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="pMergeDefaultsForTracks">
+       <layout class="QVBoxLayout" name="verticalLayout_23">
+        <item>
+         <widget class="QGroupBox" name="groupBox_11">
+          <property name="title">
+           <string>Defaults for new multiplex settings</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_6">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_15">
+             <property name="text">
+              <string>Default additional co&amp;mmand line options:</string>
+             </property>
+             <property name="buddy">
+              <cstring>leMDefaultAdditionalCommandLineOptions</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <layout class="QHBoxLayout" name="horizontalLayout_9">
+             <item>
+              <widget class="QLineEdit" name="leMDefaultAdditionalCommandLineOptions">
+               <property name="clearButtonEnabled">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pbMEditDefaultAdditionalCommandLineOptions">
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset theme="view-choose"/>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_10">
+          <property name="title">
+           <string>Defaults for newly added tracks</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_6">
+           <item>
+            <widget class="QCheckBox" name="cbMAutoSetFileTitle">
+             <property name="text">
+              <string>Automatically set the file &amp;title from source files</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="cbMAutoClearFileTitle">
+             <property name="text">
+              <string>Automatically clea&amp;r the file title when the last file is removed</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="cbMSetAudioDelayFromFileName">
+             <property name="text">
+              <string>Automatically set track &amp;delays from source file name</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="cbMDisableDefaultTrackForSubtitles">
+             <property name="text">
+              <string>Disable &quot;de&amp;fault track&quot; flag for subtitle tracks</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="cbMDisableCompressionForAllTrackTypes">
+             <property name="text">
+              <string>Disable additional lossless c&amp;ompression for all track types</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="cbMEnableDialogNormGainRemoval">
+             <property name="text">
+              <string>Enable dialog &amp;normalization gain removal for audio tracks</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QGridLayout" name="gridLayout_12">
+             <item row="0" column="0">
+              <widget class="QCheckBox" name="cbMDeriveForcedDisplayFlagSubtitles">
+               <property name="text">
+                <string>Derive &quot;forced display&quot; fla&amp;g for subtitles from file names:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="1">
+              <widget class="mtx::gui::Util::CharacterSetComboBox" name="cbMDefaultSubtitleCharset">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QCheckBox" name="cbMDeriveCommentaryFlag">
+               <property name="text">
+                <string>Derive &quot;commentar&amp;y&quot; flag for audio/subtitles from file names:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1">
+              <widget class="mtx::gui::Util::LanguageDisplayWidget" name="ldwMSetOriginalLanguageFlagLanguage">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QCheckBox" name="cbMSetOriginalLanguageFlagLanguage">
+               <property name="text">
+                <string>Set &quot;original language&quot; flag for audio/subtitles for language:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <layout class="QHBoxLayout" name="horizontalLayout_19">
+               <item>
+                <widget class="QLineEdit" name="leMDeriveCommentaryFlagRE"/>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pbMDeriveCommentaryFlagRERevert">
+                 <property name="text">
+                  <string notr="true"/>
+                 </property>
+                 <property name="icon">
+                  <iconset theme="edit-undo"/>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item row="1" column="0">
+              <widget class="QCheckBox" name="cbMDeriveHearingImpairedFlag">
+               <property name="text">
+                <string>Derive &quot;&amp;hearing impaired&quot; flag for audio/subtitles from file names:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <layout class="QHBoxLayout" name="horizontalLayout_17">
+               <item>
+                <widget class="QLineEdit" name="leMDeriveHearingImpairedFlagRE"/>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pbMDeriveHearingImpairedFlagRERevert">
+                 <property name="text">
+                  <string notr="true"/>
+                 </property>
+                 <property name="icon">
+                  <iconset theme="edit-undo"/>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item row="0" column="1">
+              <layout class="QHBoxLayout" name="horizontalLayout">
+               <item>
+                <widget class="QLineEdit" name="leMDeriveForcedDisplayFlagSubtitlesRE"/>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pbMDeriveForcedDisplayFlagSubtitlesRERevert">
+                 <property name="text">
+                  <string notr="true"/>
+                 </property>
+                 <property name="icon">
+                  <iconset theme="edit-undo"/>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item row="5" column="0">
+              <widget class="QLabel" name="label_4">
+               <property name="text">
+                <string>Default subtitle &amp;charset to set:</string>
+               </property>
+               <property name="buddy">
+                <cstring>cbMDefaultSubtitleCharset</cstring>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="cbMDeriveFlagsFromTrackNames">
+             <property name="text">
+              <string>Derive flags from trac&amp;k names in addition to file names</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="groupBox_9">
+             <property name="title">
+              <string>Default track languages to set</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_5">
+              <item row="0" column="0">
+               <widget class="QLabel" name="lDefaultAudioTrackLanguage">
+                <property name="text">
+                 <string>&amp;Audio tracks:</string>
+                </property>
+                <property name="buddy">
+                 <cstring>ldwMDefaultAudioTrackLanguage</cstring>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="mtx::gui::Util::LanguageDisplayWidget" name="ldwMDefaultAudioTrackLanguage">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="mtx::gui::Util::LanguageDisplayWidget" name="ldwMDefaultSubtitleTrackLanguage">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="mtx::gui::Util::LanguageDisplayWidget" name="ldwMDefaultVideoTrackLanguage">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="lDefaultVideoTrackLanguage">
+                <property name="text">
+                 <string>&amp;Video tracks:</string>
+                </property>
+                <property name="buddy">
+                 <cstring>ldwMDefaultVideoTrackLanguage</cstring>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="lDefaultSubtitleTrackLanguage">
+                <property name="text">
+                 <string>&amp;Subtitle tracks:</string>
+                </property>
+                <property name="buddy">
+                 <cstring>ldwMDefaultSubtitleTrackLanguage</cstring>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="0">
+               <widget class="QLabel" name="lWhenToSetDefaultLanguage">
+                <property name="text">
+                 <string>&amp;When to set the language:</string>
+                </property>
+                <property name="buddy">
+                 <cstring>cbMWhenToSetDefaultLanguage</cstring>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <widget class="QComboBox" name="cbMWhenToSetDefaultLanguage"/>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_8">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>46</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="pMergeDerivingTrackLanguageFromFileName">
+       <layout class="QVBoxLayout" name="verticalLayout_35" stretch="0,1">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QGroupBox" name="groupBox_18">
+          <property name="title">
+           <string>Deriving track languages from file names</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_8">
+           <item row="0" column="0">
+            <widget class="QLabel" name="lDeriveAudioTrackLanguageFromFileName">
+             <property name="text">
+              <string>&amp;Audio tracks:</string>
+             </property>
+             <property name="buddy">
+              <cstring>cbMDeriveAudioTrackLanguageFromFileName</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QComboBox" name="cbMDeriveAudioTrackLanguageFromFileName">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="lDeriveVideoTrackLanguageFromFileName">
+             <property name="text">
+              <string>&amp;Video tracks:</string>
+             </property>
+             <property name="buddy">
+              <cstring>cbMDeriveVideoTrackLanguageFromFileName</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QComboBox" name="cbMDeriveVideoTrackLanguageFromFileName">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="lDeriveSubtitleTrackLanguageFromFileName">
+             <property name="text">
+              <string>&amp;Subtitle tracks:</string>
+             </property>
+             <property name="buddy">
+              <cstring>cbMDeriveSubtitleTrackLanguageFromFileName</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QComboBox" name="cbMDeriveSubtitleTrackLanguageFromFileName">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_18">
+             <property name="text">
+              <string>&amp;Boundary characters:</string>
+             </property>
+             <property name="buddy">
+              <cstring>leMDeriveTrackLanguageBoundaryChars</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <layout class="QHBoxLayout" name="horizontalLayout_13">
+             <item>
+              <widget class="QLineEdit" name="leMDeriveTrackLanguageBoundaryChars">
+               <property name="clearButtonEnabled">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pbMDeriveTrackLanguageRevertBoundaryChars">
+               <property name="text">
+                <string notr="true"/>
+               </property>
+               <property name="icon">
+                <iconset theme="edit-undo"/>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_19">
+          <property name="title">
+           <string>Recognized languages</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_36">
+           <item>
+            <widget class="mtx::gui::Util::SideBySideMultiSelect" name="tbMDeriveTrackLanguageRecognizedLanguages" native="true">
+             <property name="focusPolicy">
+              <enum>Qt::StrongFocus</enum>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="pMergeOutput">
+       <layout class="QVBoxLayout" name="verticalLayout_7">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QGroupBox" name="groupBox_5">
+          <property name="title">
+           <string>Destination file name</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <item>
+            <widget class="QCheckBox" name="cbMAutoSetDestinationFileName">
+             <property name="text">
+              <string>&amp;Automatically set the destination file name</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="cbMAutoSetDestinationOnlyForVideoFiles">
+             <property name="text">
+              <string>&amp;Only use the first source file that contains a video track</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="cbMAutoSetDestinationFromTitle">
+             <property name="text">
+              <string>Use the &amp;title as the base file name if a title is set</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="cbMAutoSetDestinationFromDirectory">
+             <property name="text">
+              <string>Use the input file's &amp;directory name instead of the file name</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="gbMAutoSetDestinationDirectory">
+             <property name="title">
+              <string>Destination directory</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_31">
+              <item>
+               <widget class="QRadioButton" name="rbMAutoSetDestinationSameDirectory">
+                <property name="text">
+                 <string>Sa&amp;me directory as the first source file</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="rbMAutoSetDestinationPreviousDirectory">
+                <property name="text">
+                 <string>Pre&amp;viously used destination directory</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="rbMAutoSetDestinationRelativeDirectory">
+                <property name="text">
+                 <string>Directory &amp;relative to first source file's directory:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_7">
+                <item>
+                 <spacer name="horizontalSpacer_4">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Fixed</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="cbMAutoSetDestinationRelativeDirectory">
+                  <property name="editable">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="rbMAutoSetDestinationFixedDirectory">
+                <property name="text">
+                 <string>Use fi&amp;xed directory:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_5">
+                <item>
+                 <spacer name="horizontalSpacer_3">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Fixed</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="cbMAutoSetDestinationFixedDirectory">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="editable">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pbMAutoSetDestinationBrowseFixedDirectory">
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="icon">
+                   <iconset theme="document-open-folder"/>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="cbMUniqueOutputFileNames">
+             <property name="text">
+              <string>Ensure the file name is &amp;unique</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="cbMAutoClearOutputFileName">
+             <property name="text">
+              <string>Automatically &amp;clear the destination file name when the last file is removed</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_22">
+          <property name="title">
+           <string>Recent destination directories</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_42">
+           <item>
+            <widget class="mtx::gui::Util::StringListConfigurationWidget" name="lwMRecentDestinationDirectories" native="true"/>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="pMergeEnableTracks">
+       <layout class="QVBoxLayout" name="verticalLayout_13" stretch="0,1,0">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QGroupBox" name="groupBox_20">
+          <property name="title">
+           <string>Enable copying of items by their type</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_34">
+           <item>
+            <widget class="mtx::gui::Util::SideBySideMultiSelect" name="tbMEnableMuxingTracksByType" native="true">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>100</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>140</height>
+              </size>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::StrongFocus</enum>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_7">
+          <property name="title">
+           <string>Enable copying of tracks by their language</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_44">
+           <item>
+            <widget class="QCheckBox" name="cbMEnableMuxingTracksByLanguage">
+             <property name="text">
+              <string>&amp;Only enable copying of tracks with specific languages by default</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="mtx::gui::Util::SideBySideMultiSelect" name="tbMEnableMuxingTracksByLanguage" native="true">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>150</height>
+              </size>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::StrongFocus</enum>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="gbMEnableMuxingGeneral">
+          <property name="title">
+           <string>General options</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_9">
+           <item>
+            <widget class="QLabel" name="lMEnableMuxingAllTracksOfType">
+             <property name="text">
+              <string>Always enable copying for all tracks of the following types regardless of their language:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <item>
+              <spacer name="horizontalSpacer">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Fixed</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="cbMEnableMuxingAllVideoTracks">
+               <property name="text">
+                <string>&amp;Video</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_9">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Fixed</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>10</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="cbMEnableMuxingAllAudioTracks">
+               <property name="text">
+                <string>&amp;Audio</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_10">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Fixed</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>10</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="cbMEnableMuxingAllSubtitleTracks">
+               <property name="text">
+                <string>&amp;Subtitles</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_2">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="cbMEnableMuxingForcedSubtitleTracks">
+             <property name="text">
+              <string>Always enable copying of &amp;forced subtitle tracks</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="pMergePlaylists">
+       <layout class="QVBoxLayout" name="verticalLayout_40">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QGroupBox" name="groupBox_2">
+          <property name="title">
+           <string>Scanning playlists</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_54">
+           <item>
+            <layout class="QGridLayout" name="gridLayout">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label">
+               <property name="text">
+                <string>&amp;Scan directory for other playlists:</string>
+               </property>
+               <property name="buddy">
+                <cstring>cbMScanPlaylistsPolicy</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QComboBox" name="cbMScanPlaylistsPolicy">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <item>
+                <property name="text">
+                 <string>Always ask the user</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Always scan for other playlists</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Never scan for other playlists</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_2">
+               <property name="text">
+                <string>&amp;Minimum playlist duration:</string>
+               </property>
+               <property name="buddy">
+                <cstring>sbMMinPlaylistDuration</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="mtx::gui::Util::BasicSpinBox" name="sbMMinPlaylistDuration">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="suffix">
+                <string notr="true"> seconds</string>
+               </property>
+               <property name="maximum">
+                <number>99999</number>
+               </property>
+               <property name="singleStep">
+                <number>10</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="cbMIgnorePlaylistsForMenus">
+             <property name="text">
+              <string>&amp;Ignore playlists meant for menus</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_21">
+          <property name="title">
+           <string>Blu-rays</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_16">
+           <item>
+            <widget class="QCheckBox" name="cbMAddBlurayCovers">
+             <property name="text">
+              <string>Add &amp;Blu-ray cover images as attachments</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_6">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>324</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="pInfoGeneral">
+       <layout class="QVBoxLayout" name="verticalLayout_33">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QGroupBox" name="groupBox_17">
+          <property name="title">
+           <string>Defaults for jobs saving info tool output to text files</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_32">
+           <item>
+            <widget class="mtx::gui::Info::JobSettingsWidget" name="wIDefaultJobSettings" native="true">
+             <property name="focusPolicy">
+              <enum>Qt::StrongFocus</enum>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_11">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>425</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="pHeaderEditorGeneral">
+       <layout class="QVBoxLayout" name="verticalLayout_29">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QGroupBox" name="groupBox_15">
+          <property name="title">
+           <string>Header editor</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_41">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_11">
+             <item>
+              <widget class="QLabel" name="label_14">
+               <property name="text">
+                <string>When &amp;dropping files:</string>
+               </property>
+               <property name="buddy">
+                <cstring>cbHEDroppedFilesPolicy</cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="cbHEDroppedFilesPolicy">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="cbHEDateTimeInUTC">
+             <property name="text">
+              <string>Show dates &amp;&amp; times in &amp;UTC instead of the local time zone</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_10">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>341</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="pChapterEditorGeneral">
+       <layout class="QVBoxLayout" name="verticalLayout_15">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QGroupBox" name="groupBox_8">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>Chapter editor</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_11">
+           <item>
+            <widget class="QCheckBox" name="cbCEDropLastFromBlurayPlaylist">
+             <property name="text">
+              <string>Drop last entry from imported &amp;Blu-ray playlists if it's near the end</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_12">
+             <item>
+              <widget class="QLabel" name="label_17">
+               <property name="text">
+                <string>&amp;Character set for text files:</string>
+               </property>
+               <property name="buddy">
+                <cstring>cbCETextFileCharacterSet</cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="mtx::gui::Util::CharacterSetComboBox" name="cbCETextFileCharacterSet">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_13">
+          <property name="title">
+           <string>Defaults for new chapter entries</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_3">
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="leCENameTemplate">
+             <property name="clearButtonEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_7">
+             <property name="text">
+              <string>Na&amp;me template:</string>
+             </property>
+             <property name="buddy">
+              <cstring>leCENameTemplate</cstring>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="mtx::gui::Util::LanguageDisplayWidget" name="ldwCEDefaultLanguage">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_10">
+             <property name="text">
+              <string>Language:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>0</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="pJobsGeneral">
+       <layout class="QVBoxLayout" name="verticalLayout_14">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QGroupBox" name="groupBox_4">
+          <property name="title">
+           <string>Jobs and job output</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <widget class="QCheckBox" name="cbGuiSwitchToJobOutputAfterStarting">
+             <property name="text">
+              <string>Always &amp;switch to the job output tool after starting one immediately</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="cbGuiUseDefaultJobDescription">
+             <property name="text">
+              <string>Always use a &amp;default description when adding a job to the queue</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="cbGuiShowOutputOfAllJobs">
+             <property name="text">
+              <string>Show &amp;output of all jobs instead of current job only</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="cbGuiResetJobWarningErrorCountersOnExit">
+             <property name="text">
+              <string>Reset the warning and error &amp;counters on exit</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="cbGuiRemoveOutputFileOnJobFailure">
+             <property name="text">
+              <string>Remove the output &amp;file when a job ends with errors or when it is aborted</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QGridLayout" name="gridLayout_7">
+             <item row="2" column="0">
+              <widget class="QCheckBox" name="cbGuiRemoveOldJobs">
+               <property name="text">
+                <string>Remove com&amp;pleted jobs older than x days:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QCheckBox" name="cbGuiRemoveJobsOnExit">
+               <property name="text">
+                <string>Remove completed jobs from queue on &amp;exit:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QCheckBox" name="cbGuiRemoveJobs">
+               <property name="text">
+                <string>&amp;Remove job from queue after completion:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QComboBox" name="cbGuiJobRemovalPolicy">
+               <item>
+                <property name="text">
+                 <string>Only if the job completed successfully</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Even if there were warnings</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Even if there were errors</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="mtx::gui::Util::BasicSpinBox" name="sbGuiRemoveOldJobsDays">
+               <property name="suffix">
+                <string notr="true"> days</string>
+               </property>
+               <property name="minimum">
+                <number>1</number>
+               </property>
+               <property name="maximum">
+                <number>365</number>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QComboBox" name="cbGuiJobRemovalOnExitPolicy">
+               <item>
+                <property name="text">
+                 <string>Only if the job completed successfully</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Even if there were warnings</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Even if there were errors</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="label_22">
+               <property name="text">
+                <string>Ma&amp;ximum number of concurrent jobs:</string>
+               </property>
+               <property name="buddy">
+                <cstring>sbGuiMaximumConcurrentJobs</cstring>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="mtx::gui::Util::BasicSpinBox" name="sbGuiMaximumConcurrentJobs">
+               <property name="minimum">
+                <number>1</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_5">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>205</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="pJobsExecutePrograms">
+       <layout class="QVBoxLayout" name="verticalLayout_28">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QGroupBox" name="groupBox_14">
+          <property name="title">
+           <string>Executing actions after certain events</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_27">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_4">
+             <item>
+              <spacer name="horizontalSpacer_6">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pbJobsAddProgram">
+               <property name="text">
+                <string>&amp;Add action</string>
+               </property>
+               <property name="icon">
+                <iconset theme="list-add"/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_5">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QStackedWidget" name="swJobsPrograms">
+             <property name="currentIndex">
+              <number>0</number>
+             </property>
+             <widget class="QWidget" name="pJobsNoPrograms">
+              <layout class="QVBoxLayout" name="verticalLayout_25">
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_6">
+                 <item>
+                  <widget class="QLabel" name="label_8">
+                   <property name="text">
+                    <string>No actions have been added yet.</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer_7">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <spacer name="verticalSpacer_9">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>329</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="pJobsExistingPrograms">
+              <layout class="QVBoxLayout" name="verticalLayout_26">
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="mtx::gui::Util::BasicTabWidget" name="twJobsPrograms">
+                 <property name="currentIndex">
+                  <number>-1</number>
+                 </property>
+                 <property name="tabsClosable">
+                  <bool>true</bool>
+                 </property>
+                 <property name="movable">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttons">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>mtx::gui::Util::LanguageDisplayWidget</class>
+   <extends>QFrame</extends>
+   <header>mkvtoolnix-gui/util/language_display_widget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>mtx::gui::Util::CharacterSetComboBox</class>
+   <extends>QComboBox</extends>
+   <header>mkvtoolnix-gui/util/character_set_combo_box.h</header>
+  </customwidget>
+  <customwidget>
+   <class>mtx::gui::Util::BasicTabWidget</class>
+   <extends>QTabWidget</extends>
+   <header>mkvtoolnix-gui/util/basic_tab_widget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>mtx::gui::Util::SideBySideMultiSelect</class>
+   <extends>QWidget</extends>
+   <header>mkvtoolnix-gui/util/side_by_side_multi_select.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>mtx::gui::Info::JobSettingsWidget</class>
+   <extends>QWidget</extends>
+   <header>mkvtoolnix-gui/info/job_settings_widget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>mtx::gui::Util::StringListConfigurationWidget</class>
+   <extends>QWidget</extends>
+   <header>mkvtoolnix-gui/util/string_list_configuration_widget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>mtx::gui::Util::BasicSpinBox</class>
+   <extends>QSpinBox</extends>
+   <header>mkvtoolnix-gui/util/basic_spin_box.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>pageSelector</tabstop>
+  <tabstop>cbGuiInterfaceLanguage</tabstop>
+  <tabstop>fcbGuiFontFamily</tabstop>
+  <tabstop>cbGuiPalette</tabstop>
+  <tabstop>sbGuiFontPointSize</tabstop>
+  <tabstop>sbGuiNumRecentlyUsedStrings</tabstop>
+  <tabstop>cbGuiStayOnTop</tabstop>
+  <tabstop>cbGuiDisableHighDPIScaling</tabstop>
+  <tabstop>cbGuiDisableToolTips</tabstop>
+  <tabstop>cbGuiCheckForUpdates</tabstop>
+  <tabstop>cbGuiUseLegacyFontMIMETypes</tabstop>
+  <tabstop>cbGuiShowDebuggingMenu</tabstop>
+  <tabstop>cbGuiTabPositions</tabstop>
+  <tabstop>cbGuiBCP47LanguageEditingMode</tabstop>
+  <tabstop>cbGuiElideTabHeaderLabels</tabstop>
+  <tabstop>cbGuiShowToolSelector</tabstop>
+  <tabstop>cbGuiShowMoveUpDownButtons</tabstop>
+  <tabstop>cbGuiWarnBeforeClosingModifiedTabs</tabstop>
+  <tabstop>cbGuiWarnBeforeAbortingJobs</tabstop>
+  <tabstop>cbGuiWarnBeforeOverwriting</tabstop>
+  <tabstop>tbOftenUsedXYZ</tabstop>
+  <tabstop>tbOftenUsedLanguages</tabstop>
+  <tabstop>cbGuiBCP47LanguageEditingMode</tabstop>
+  <tabstop>cbGuiBCP47NormalizationMode</tabstop>
+  <tabstop>cbUseISO639_3Languages</tabstop>
+  <tabstop>cbOftenUsedLanguagesOnly</tabstop>
+  <tabstop>tbOftenUsedRegions</tabstop>
+  <tabstop>cbOftenUsedRegionsOnly</tabstop>
+  <tabstop>tbOftenUsedCharacterSets</tabstop>
+  <tabstop>cbOftenUsedCharacterSetsOnly</tabstop>
+  <tabstop>twGuiLanguageShortcuts</tabstop>
+  <tabstop>pbGuiAddLanguageShortcut</tabstop>
+  <tabstop>pbGuiEditLanguageShortcut</tabstop>
+  <tabstop>pbGuiRemoveLanguageShortcuts</tabstop>
+  <tabstop>cbMClearMergeSettings</tabstop>
+  <tabstop>cbMWarnMissingAudioTrack</tabstop>
+  <tabstop>cbMProcessPriority</tabstop>
+  <tabstop>cbMProbeRangePercentage</tabstop>
+  <tabstop>cbMDefaultCommandLineEscapeMode</tabstop>
+  <tabstop>leMMediaInfoExe</tabstop>
+  <tabstop>pbMBrowseMediaInfoExe</tabstop>
+  <tabstop>cbMEnsureAtLeastOneTrackEnabled</tabstop>
+  <tabstop>cbMAddingAppendingFilesPolicy</tabstop>
+  <tabstop>cbMDragAndDropFilesPolicy</tabstop>
+  <tabstop>cbMDragAndDropDirectoriesPolicy</tabstop>
+  <tabstop>cbMAlwaysCreateSettingsForVideoFiles</tabstop>
+  <tabstop>cbMShowDNDZones</tabstop>
+  <tabstop>cbMSortFilesTracksByTypeWhenAdding</tabstop>
+  <tabstop>cbMReconstructSequencesWhenAdding</tabstop>
+  <tabstop>cbMAttachmentAlwaysSkipForExistingName</tabstop>
+  <tabstop>cbMAlwaysShowOutputFileControls</tabstop>
+  <tabstop>rbMTrackPropertiesLayoutHorizontalScrollArea</tabstop>
+  <tabstop>rbMTrackPropertiesLayoutHorizontalTwoColumns</tabstop>
+  <tabstop>rbMTrackPropertiesLayoutVerticalTabWidget</tabstop>
+  <tabstop>cbMUseFileAndTrackColors</tabstop>
+  <tabstop>lwMFileColors</tabstop>
+  <tabstop>pbMAddFileColor</tabstop>
+  <tabstop>pbMRemoveFileColors</tabstop>
+  <tabstop>pbMEditFileColor</tabstop>
+  <tabstop>pbMRevertFileColorsToDefault</tabstop>
+  <tabstop>leMDefaultAdditionalCommandLineOptions</tabstop>
+  <tabstop>pbMEditDefaultAdditionalCommandLineOptions</tabstop>
+  <tabstop>cbMAutoSetFileTitle</tabstop>
+  <tabstop>cbMAutoClearFileTitle</tabstop>
+  <tabstop>cbMSetAudioDelayFromFileName</tabstop>
+  <tabstop>cbMDisableDefaultTrackForSubtitles</tabstop>
+  <tabstop>cbMDisableCompressionForAllTrackTypes</tabstop>
+  <tabstop>cbMEnableDialogNormGainRemoval</tabstop>
+  <tabstop>cbMDeriveForcedDisplayFlagSubtitles</tabstop>
+  <tabstop>leMDeriveForcedDisplayFlagSubtitlesRE</tabstop>
+  <tabstop>pbMDeriveForcedDisplayFlagSubtitlesRERevert</tabstop>
+  <tabstop>cbMDeriveHearingImpairedFlag</tabstop>
+  <tabstop>leMDeriveHearingImpairedFlagRE</tabstop>
+  <tabstop>pbMDeriveHearingImpairedFlagRERevert</tabstop>
+  <tabstop>cbMDeriveCommentaryFlag</tabstop>
+  <tabstop>leMDeriveCommentaryFlagRE</tabstop>
+  <tabstop>pbMDeriveCommentaryFlagRERevert</tabstop>
+  <tabstop>cbMSetOriginalLanguageFlagLanguage</tabstop>
+  <tabstop>ldwMSetOriginalLanguageFlagLanguage</tabstop>
+  <tabstop>cbMDefaultSubtitleCharset</tabstop>
+  <tabstop>cbMDeriveFlagsFromTrackNames</tabstop>
+  <tabstop>cbMWhenToSetDefaultLanguage</tabstop>
+  <tabstop>cbMDeriveAudioTrackLanguageFromFileName</tabstop>
+  <tabstop>cbMDeriveVideoTrackLanguageFromFileName</tabstop>
+  <tabstop>cbMDeriveSubtitleTrackLanguageFromFileName</tabstop>
+  <tabstop>leMDeriveTrackLanguageBoundaryChars</tabstop>
+  <tabstop>pbMDeriveTrackLanguageRevertBoundaryChars</tabstop>
+  <tabstop>tbMDeriveTrackLanguageRecognizedLanguages</tabstop>
+  <tabstop>cbMAutoSetDestinationFileName</tabstop>
+  <tabstop>cbMAutoSetDestinationOnlyForVideoFiles</tabstop>
+  <tabstop>cbMAutoSetDestinationFromTitle</tabstop>
+  <tabstop>cbMAutoSetDestinationFromDirectory</tabstop>
+  <tabstop>rbMAutoSetDestinationSameDirectory</tabstop>
+  <tabstop>rbMAutoSetDestinationPreviousDirectory</tabstop>
+  <tabstop>rbMAutoSetDestinationRelativeDirectory</tabstop>
+  <tabstop>cbMAutoSetDestinationRelativeDirectory</tabstop>
+  <tabstop>rbMAutoSetDestinationFixedDirectory</tabstop>
+  <tabstop>cbMAutoSetDestinationFixedDirectory</tabstop>
+  <tabstop>pbMAutoSetDestinationBrowseFixedDirectory</tabstop>
+  <tabstop>cbMUniqueOutputFileNames</tabstop>
+  <tabstop>cbMAutoClearOutputFileName</tabstop>
+  <tabstop>tbMEnableMuxingTracksByType</tabstop>
+  <tabstop>cbMEnableMuxingTracksByLanguage</tabstop>
+  <tabstop>tbMEnableMuxingTracksByLanguage</tabstop>
+  <tabstop>cbMEnableMuxingAllVideoTracks</tabstop>
+  <tabstop>cbMEnableMuxingAllAudioTracks</tabstop>
+  <tabstop>cbMEnableMuxingAllSubtitleTracks</tabstop>
+  <tabstop>cbMEnableMuxingForcedSubtitleTracks</tabstop>
+  <tabstop>cbMScanPlaylistsPolicy</tabstop>
+  <tabstop>sbMMinPlaylistDuration</tabstop>
+  <tabstop>cbMIgnorePlaylistsForMenus</tabstop>
+  <tabstop>cbMAddBlurayCovers</tabstop>
+  <tabstop>wIDefaultJobSettings</tabstop>
+  <tabstop>cbHEDroppedFilesPolicy</tabstop>
+  <tabstop>cbHEDateTimeInUTC</tabstop>
+  <tabstop>cbCEDropLastFromBlurayPlaylist</tabstop>
+  <tabstop>cbCETextFileCharacterSet</tabstop>
+  <tabstop>leCENameTemplate</tabstop>
+  <tabstop>cbGuiSwitchToJobOutputAfterStarting</tabstop>
+  <tabstop>cbGuiUseDefaultJobDescription</tabstop>
+  <tabstop>cbGuiShowOutputOfAllJobs</tabstop>
+  <tabstop>cbGuiResetJobWarningErrorCountersOnExit</tabstop>
+  <tabstop>cbGuiRemoveOutputFileOnJobFailure</tabstop>
+  <tabstop>cbGuiRemoveJobs</tabstop>
+  <tabstop>cbGuiJobRemovalPolicy</tabstop>
+  <tabstop>cbGuiRemoveJobsOnExit</tabstop>
+  <tabstop>cbGuiJobRemovalOnExitPolicy</tabstop>
+  <tabstop>cbGuiRemoveOldJobs</tabstop>
+  <tabstop>sbGuiRemoveOldJobsDays</tabstop>
+  <tabstop>sbGuiMaximumConcurrentJobs</tabstop>
+  <tabstop>pbJobsAddProgram</tabstop>
+  <tabstop>twJobsPrograms</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+ <slots>
+  <slot>addCommonLanguages()</slot>
+  <slot>removeCommonLanguages()</slot>
+  <slot>addCommonCountries()</slot>
+  <slot>removeCommonCountries()</slot>
+  <slot>enableOutputFileNameControls()</slot>
+ </slots>
+</ui>

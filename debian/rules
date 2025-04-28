@@ -1,4 +1,46 @@
 #!/usr/bin/make -f
 
+ifneq (,$(findstring parallel=,$(DEB_BUILD_OPTIONS)))
+	NCPUS = $(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
+else
+	NCPUS:=1
+endif
+
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,-z,defs -Wl,--as-needed
+export DEB_CXXFLAGS_MAINT_APPEND = -fPIC -DPIC -fno-var-tracking
+
 %:
 	dh $@
+
+override_dh_autoreconf:
+	cp /usr/share/aclocal/ax_boost_base.m4 ac
+
+	dh_autoreconf
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+	--docdir='$${datarootdir}/doc/mkvtoolnix-gui' \
+	--disable-update-check --enable-debug
+
+#	exit 1
+
+override_dh_auto_build:
+	rake -j $(NCPUS)
+
+override_dh_clean:
+	[ ! -f build-config ] || rake clean:dist
+
+	dh_clean config.status rake.d/dependecy.d/*.rb src/input/*.d \
+	config.h build-config ac/ax_boost_base.m4 tests/unit/common/common \
+	tests/unit/merge/merge tests/unit/propedit/propedit \
+	doc/development.html
+
+override_dh_install:
+	rake install DESTDIR=$(CURDIR)/debian/tmp
+
+#	cp share/desktop/org.bunkus.mkvtoolnix-gui.desktop debian/tmp/usr/share/applications
+
+	dh_install -Xmkvtoolnix.xml
+
+override_dh_missing:
+	dh_missing --fail-missing -Xmkvtoolnix.xml
